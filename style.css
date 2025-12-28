@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #cecece;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.grid {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "main main sec white2"
+        "white1 dark dark white2";
+    gap: 25px;
+    margin: 20px;
+}
+
+.card {
+    padding: 30px 30px 10px;
+    border-radius: 10px;
+}
+
+.card-main {
+    background-color: #733fc8;
+    grid-area: main;
+    position: relative;
+}
+
+.card-secondary {
+    background-color: #49556b;
+    grid-area: sec;
+}
+
+.card-white1 {
+    background-color: #ffffff;
+    grid-area: white1;
+}
+
+.card-dark {
+    background-color: #191f2d;
+    grid-area: dark;
+}
+
+.card-white2 {
+    background-color: #ffffff;
+    grid-area: white2;
+}
+
+.quote-bg {
+    position: absolute;
+    top: 0;
+    right: 70px;
+}
+
+.quote-bg img {
+    width: 100px;
+    height: auto;
+    opacity: 0.7;
+}
+
+.card-header {
+    display: flex;
+    gap: 10px;
+}
+
+.user-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.card-main .user-img,
+.card-dark .user-img {
+    border: 3px solid #8d6bc4;
+}
+
+
+.user-info {
+    margin-bottom: 15px;
+}
+
+.user-name {
+    font-size: 13px;
+    color: #fff;
+}
+
+.card-white1 .user-name,
+.card-white2 .user-name {
+    color: #3e4249;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #b1b3be;
+}
+
+.card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card-white1 .card-title,
+.card-white2 .card-title {
+    font-size: 22px;
+    color: #3e4249;
+}
+
+.card-desc {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #cfcfcf;
+}
+
+.card-white1 .card-desc,
+.card-dark .card-desc,
+.card-white2 .card-desc {
+    color: #818181;
+}
+
+@media (max-width: 900px) {
+    .card-main .quote-bg {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
